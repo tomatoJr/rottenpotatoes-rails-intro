@@ -33,7 +33,7 @@ class MoviesController < ApplicationController
     
     if params.keys.include? "ratings"
       if params[:ratings].is_a? Hash
-        @ratings=params[:ratings].key 
+        @ratings=params[:ratings].keys
       elsif params[:ratings].is_a? Array
         @ratings=params[:ratings]
       end
