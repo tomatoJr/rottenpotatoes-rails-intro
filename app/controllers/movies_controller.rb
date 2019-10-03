@@ -46,8 +46,9 @@ class MoviesController < ApplicationController
     
     session[:ratings]=@ratings
     if !((params.keys.include? 'sort') || (params.keys.include? 'ratings'))
-      redirect_to movie_path(:sort=>session[:sort], :ratings=>session[:ratings])
+      redirect_to movies_path(:sort =>session[:sort], :ratings =>session[:ratings])
     end
+    
     @movies=Movie.where(:rating=>@ratings).order(sort)
     
     
